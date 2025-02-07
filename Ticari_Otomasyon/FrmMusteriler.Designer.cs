@@ -39,7 +39,7 @@
             this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.RchDetay = new System.Windows.Forms.RichTextBox();
+            this.RchAdres = new System.Windows.Forms.RichTextBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.TxtMail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -81,7 +81,7 @@
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
-            this.groupControl1.Controls.Add(this.RchDetay);
+            this.groupControl1.Controls.Add(this.RchAdres);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.TxtMail);
             this.groupControl1.Controls.Add(this.labelControl8);
@@ -172,6 +172,7 @@
             this.BtnGuncelle.Size = new System.Drawing.Size(219, 39);
             this.BtnGuncelle.TabIndex = 21;
             this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // BtnSil
             // 
@@ -183,6 +184,7 @@
             this.BtnSil.Size = new System.Drawing.Size(219, 39);
             this.BtnSil.TabIndex = 20;
             this.BtnSil.Text = "Sil";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnKaydet
             // 
@@ -194,14 +196,15 @@
             this.BtnKaydet.Size = new System.Drawing.Size(219, 39);
             this.BtnKaydet.TabIndex = 19;
             this.BtnKaydet.Text = "Kaydet";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
-            // RchDetay
+            // RchAdres
             // 
-            this.RchDetay.Location = new System.Drawing.Point(132, 370);
-            this.RchDetay.Name = "RchDetay";
-            this.RchDetay.Size = new System.Drawing.Size(219, 111);
-            this.RchDetay.TabIndex = 18;
-            this.RchDetay.Text = "";
+            this.RchAdres.Location = new System.Drawing.Point(132, 370);
+            this.RchAdres.Name = "RchAdres";
+            this.RchAdres.Size = new System.Drawing.Size(219, 111);
+            this.RchAdres.TabIndex = 18;
+            this.RchAdres.Text = "";
             // 
             // labelControl9
             // 
@@ -361,6 +364,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // FrmMusteriler
             // 
@@ -394,7 +398,7 @@
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.SimpleButton BtnKaydet;
-        private System.Windows.Forms.RichTextBox RchDetay;
+        private System.Windows.Forms.RichTextBox RchAdres;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit TxtMail;
         private DevExpress.XtraEditors.LabelControl labelControl8;
