@@ -110,6 +110,7 @@
             this.BtnTemizle.Size = new System.Drawing.Size(219, 39);
             this.BtnTemizle.TabIndex = 28;
             this.BtnTemizle.Text = "Temizle";
+            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
             // 
             // Cmbilce
             // 
@@ -173,6 +174,7 @@
             this.BtnGuncelle.Size = new System.Drawing.Size(219, 39);
             this.BtnGuncelle.TabIndex = 21;
             this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // BtnSil
             // 
@@ -184,6 +186,7 @@
             this.BtnSil.Size = new System.Drawing.Size(219, 39);
             this.BtnSil.TabIndex = 20;
             this.BtnSil.Text = "Sil";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnKaydet
             // 
@@ -353,6 +356,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // FrmPersonel
             // 

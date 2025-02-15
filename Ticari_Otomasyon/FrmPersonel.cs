@@ -37,10 +37,26 @@ namespace Ticari_Otomasyon
             }
             bgl.baglanti().Close();
         }
+        void temizle()
+        {
+            TxtId.Text = "";
+            TxtAd.Text = "";
+            TxtSoyad.Text = "";
+            TxtGorev.Text = "";
+            TxtMail.Text = "";
+            MskTC.Text = "";
+            MskTelefon.Text = "";
+            Cmbil.Text = "";
+            Cmbilce.Text = "";
+            RchAdres.Text = "";
+
+                
+        }
         private void FrmPersonel_Load(object sender, EventArgs e)
         {
             personelliste();
             sehirlistesi();
+            temizle();
         }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
@@ -73,6 +89,60 @@ namespace Ticari_Otomasyon
                 Cmbilce.Properties.Items.Add(dr[0]);
             }
             bgl.baglanti().Close();
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if(dr != null)
+            {
+                TxtId.Text = dr["ID"].ToString();
+                TxtAd.Text = dr["AD"].ToString();
+                TxtSoyad.Text = dr["SOYAD"].ToString();
+                MskTelefon.Text = dr["TELEFON"].ToString();
+                MskTC.Text = dr["TC"].ToString();
+                TxtMail.Text = dr["MAIL"].ToString();
+                Cmbil.Text = dr["IL"].ToString();
+                Cmbilce.Text = dr["ILCE"].ToString();
+                RchAdres.Text = dr["ADRES"].ToString();
+                TxtGorev.Text = dr["GOREV"].ToString();
+            }
+        }
+
+        private void BtnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
+        }
+
+        private void BtnSil_Click(object sender, EventArgs e)
+        {
+            SqlCommand komutsil = new SqlCommand("Delete from TBL_PERSONELLER where ID=@P1",
+                 bgl.baglanti());
+            komutsil.Parameters.AddWithValue("@P1", TxtId.Text);
+            komutsil.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Personel Silindi","Bilgi",MessageBoxButtons.OK, MessageBoxIcon.None);
+            personelliste();
+            temizle();
+        }
+
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("update TBL_PERSONELLER set AD=@P1,SOYAD=@P2,TELEFON=@P3,TC=@P4,MAIL=@P5,IL=@P6,ILCE=@P7,ADRES=@P8,GOREV=@P9 WHERE ID=@P10",bgl.baglanti());
+            komut.Parameters.AddWithValue("@P1", TxtAd.Text);
+            komut.Parameters.AddWithValue("@P2", TxtSoyad.Text);
+            komut.Parameters.AddWithValue("@P3", MskTelefon.Text);
+            komut.Parameters.AddWithValue("@P4", MskTC.Text);
+            komut.Parameters.AddWithValue("@P5", TxtMail.Text);
+            komut.Parameters.AddWithValue("@P6", Cmbil.Text);
+            komut.Parameters.AddWithValue("@P7", Cmbilce.Text);
+            komut.Parameters.AddWithValue("@P8", RchAdres.Text);
+            komut.Parameters.AddWithValue("@P9", TxtGorev.Text);
+            komut.Parameters.AddWithValue("@P10", TxtId.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Personel Bilgileri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            personelliste();
         }
     }
 }
