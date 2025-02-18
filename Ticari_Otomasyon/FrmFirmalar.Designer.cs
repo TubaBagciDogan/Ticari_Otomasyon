@@ -71,6 +71,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
@@ -87,7 +88,6 @@
             this.TxtKod2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.TxtKod3 = new DevExpress.XtraEditors.TextEdit();
-            this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cmbilce.Properties)).BeginInit();
@@ -128,6 +128,8 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -307,11 +309,11 @@
             this.groupControl4.Controls.Add(this.MskTelefon1);
             this.groupControl4.Controls.Add(this.TxtMail);
             this.groupControl4.Controls.Add(this.labelControl8);
-            this.groupControl4.Location = new System.Drawing.Point(7, 253);
+            this.groupControl4.Location = new System.Drawing.Point(5, 203);
             this.groupControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.ShowCaption = false;
-            this.groupControl4.Size = new System.Drawing.Size(282, 149);
+            this.groupControl4.Size = new System.Drawing.Size(226, 119);
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "groupControl4";
             // 
@@ -424,11 +426,11 @@
             this.groupControl3.Controls.Add(this.labelControl13);
             this.groupControl3.Controls.Add(this.TxtYetkili);
             this.groupControl3.Controls.Add(this.labelControl12);
-            this.groupControl3.Location = new System.Drawing.Point(7, 122);
+            this.groupControl3.Location = new System.Drawing.Point(5, 98);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.ShowCaption = false;
-            this.groupControl3.Size = new System.Drawing.Size(282, 109);
+            this.groupControl3.Size = new System.Drawing.Size(226, 87);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "groupControl3";
             // 
@@ -503,11 +505,11 @@
             this.groupControl2.Controls.Add(this.labelControl2);
             this.groupControl2.Controls.Add(this.TxtId);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Location = new System.Drawing.Point(1, 12);
+            this.groupControl2.Location = new System.Drawing.Point(1, 10);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(288, 106);
+            this.groupControl2.Size = new System.Drawing.Size(230, 85);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "groupControl2";
             // 
@@ -604,6 +606,19 @@
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "groupControl5";
             // 
+            // BtnTemizle
+            // 
+            this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnTemizle.Appearance.Options.UseFont = true;
+            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
+            this.BtnTemizle.Location = new System.Drawing.Point(89, 388);
+            this.BtnTemizle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnTemizle.Name = "BtnTemizle";
+            this.BtnTemizle.Size = new System.Drawing.Size(219, 39);
+            this.BtnTemizle.TabIndex = 28;
+            this.BtnTemizle.Text = "Temizle";
+            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
+            // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.groupControl7);
@@ -698,11 +713,11 @@
             this.groupControl6.Controls.Add(this.TxtKod2);
             this.groupControl6.Controls.Add(this.labelControl16);
             this.groupControl6.Controls.Add(this.TxtKod3);
-            this.groupControl6.Location = new System.Drawing.Point(16, 26);
+            this.groupControl6.Location = new System.Drawing.Point(13, 21);
             this.groupControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.ShowCaption = false;
-            this.groupControl6.Size = new System.Drawing.Size(210, 81);
+            this.groupControl6.Size = new System.Drawing.Size(168, 65);
             this.groupControl6.TabIndex = 0;
             this.groupControl6.Text = "groupControl6";
             // 
@@ -768,19 +783,6 @@
             this.TxtKod3.Properties.Appearance.Options.UseFont = true;
             this.TxtKod3.Size = new System.Drawing.Size(215, 28);
             this.TxtKod3.TabIndex = 23;
-            // 
-            // BtnTemizle
-            // 
-            this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnTemizle.Appearance.Options.UseFont = true;
-            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.BtnTemizle.Location = new System.Drawing.Point(89, 388);
-            this.BtnTemizle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnTemizle.Name = "BtnTemizle";
-            this.BtnTemizle.Size = new System.Drawing.Size(219, 39);
-            this.BtnTemizle.TabIndex = 28;
-            this.BtnTemizle.Text = "Temizle";
-            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
             // 
             // FrmFirmalar
             // 
