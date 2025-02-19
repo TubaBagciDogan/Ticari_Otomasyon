@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 namespace Ticari_Otomasyon
 {
@@ -19,7 +21,22 @@ namespace Ticari_Otomasyon
         public string mail;
         private void FrmMail_Load(object sender, EventArgs e)
         {
-            label1.Text = mail;
+            TxtMailAdres.Text = mail;
+        }
+
+        private void BtnGonder_Click(object sender, EventArgs e)
+        {
+            MailMessage mesajım = new MailMessage();
+            SmtpClient istemci = new SmtpClient();
+            istemci.Credentials = new System.Net.NetworkCredential("Mail", "Şifre");
+            istemci.Port = 587;
+            istemci.Host = "smtp.live.com";
+            istemci.EnableSsl = true;
+            mesajım.To.Add(RchMesaj.Text);
+            mesajım.From = new MailAddress("Mail");
+            mesajım.Subject = TxtKonu.Text;
+            mesajım.Body = RchMesaj.Text;
+            istemci.Send(mesajım);
         }
     }
 }
