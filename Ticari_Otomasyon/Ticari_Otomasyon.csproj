@@ -68,6 +68,12 @@
     <Compile Include="FrmFirmalar.Designer.cs">
       <DependentUpon>FrmFirmalar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGiderler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGiderler.Designer.cs">
+      <DependentUpon>FrmGiderler.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFirmalar.resx">
       <DependentUpon>FrmFirmalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGiderler.resx">
+      <DependentUpon>FrmGiderler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMail.resx">
       <DependentUpon>FrmMail.cs</DependentUpon>
