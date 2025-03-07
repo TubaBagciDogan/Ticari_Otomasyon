@@ -53,13 +53,13 @@
             this.TxtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtFirma = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.TxtYetkili = new System.Windows.Forms.MaskedTextBox();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.TxtHesapNo = new System.Windows.Forms.MaskedTextBox();
-            this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cmbilce.Properties)).BeginInit();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtFirma.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1
@@ -82,6 +82,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsEditForm.PopupEditFormWidth = 600;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // gridControl1
             // 
@@ -118,6 +119,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Cmbil.Size = new System.Drawing.Size(161, 24);
             this.Cmbil.TabIndex = 26;
+            this.Cmbil.SelectedIndexChanged += new System.EventHandler(this.Cmbil_SelectedIndexChanged);
             // 
             // MskTarih
             // 
@@ -160,6 +162,7 @@
             this.BtnGuncelle.Size = new System.Drawing.Size(164, 32);
             this.BtnGuncelle.TabIndex = 21;
             this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // BtnSil
             // 
@@ -172,6 +175,7 @@
             this.BtnSil.Size = new System.Drawing.Size(164, 32);
             this.BtnSil.TabIndex = 20;
             this.BtnSil.Text = "Sil";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnKaydet
             // 
@@ -184,6 +188,7 @@
             this.BtnKaydet.Size = new System.Drawing.Size(164, 32);
             this.BtnKaydet.TabIndex = 19;
             this.BtnKaydet.Text = "Kaydet";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // labelControl9
             // 
@@ -323,9 +328,9 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lookUpEdit1);
             this.groupControl1.Controls.Add(this.BtnTemizle);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.TxtFirma);
             this.groupControl1.Controls.Add(this.labelControl13);
             this.groupControl1.Controls.Add(this.TxtYetkili);
             this.groupControl1.Controls.Add(this.labelControl12);
@@ -357,6 +362,19 @@
             this.groupControl1.Size = new System.Drawing.Size(328, 515);
             this.groupControl1.TabIndex = 5;
             // 
+            // BtnTemizle
+            // 
+            this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnTemizle.Appearance.Options.UseFont = true;
+            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
+            this.BtnTemizle.Location = new System.Drawing.Point(95, 476);
+            this.BtnTemizle.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnTemizle.Name = "BtnTemizle";
+            this.BtnTemizle.Size = new System.Drawing.Size(164, 32);
+            this.BtnTemizle.TabIndex = 34;
+            this.BtnTemizle.Text = "Temizle";
+            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
+            // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -367,16 +385,6 @@
             this.labelControl8.Size = new System.Drawing.Size(38, 17);
             this.labelControl8.TabIndex = 33;
             this.labelControl8.Text = "Firma:";
-            // 
-            // TxtFirma
-            // 
-            this.TxtFirma.Location = new System.Drawing.Point(98, 331);
-            this.TxtFirma.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtFirma.Name = "TxtFirma";
-            this.TxtFirma.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtFirma.Properties.Appearance.Options.UseFont = true;
-            this.TxtFirma.Size = new System.Drawing.Size(161, 24);
-            this.TxtFirma.TabIndex = 32;
             // 
             // labelControl13
             // 
@@ -416,17 +424,17 @@
             this.TxtHesapNo.Size = new System.Drawing.Size(161, 21);
             this.TxtHesapNo.TabIndex = 28;
             // 
-            // BtnTemizle
+            // lookUpEdit1
             // 
-            this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnTemizle.Appearance.Options.UseFont = true;
-            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
-            this.BtnTemizle.Location = new System.Drawing.Point(95, 476);
-            this.BtnTemizle.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnTemizle.Name = "BtnTemizle";
-            this.BtnTemizle.Size = new System.Drawing.Size(164, 32);
-            this.BtnTemizle.TabIndex = 34;
-            this.BtnTemizle.Text = "Temizle";
+            this.lookUpEdit1.Location = new System.Drawing.Point(100, 331);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.NullText = "Bir Firma seçin";
+            this.lookUpEdit1.Size = new System.Drawing.Size(160, 24);
+            this.lookUpEdit1.TabIndex = 35;
             // 
             // FrmBankalar
             // 
@@ -449,7 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtFirma.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,7 +493,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private System.Windows.Forms.MaskedTextBox TxtYetkili;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit TxtFirma;
         private DevExpress.XtraEditors.SimpleButton BtnTemizle;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
     }
 }
