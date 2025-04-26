@@ -50,10 +50,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.TxtUrunId = new DevExpress.XtraEditors.TextEdit();
-            this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -63,6 +60,9 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.TxtAlici = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.TxtTeslimAlan = new DevExpress.XtraEditors.TextEdit();
@@ -221,10 +221,7 @@
             this.groupControl5.Controls.Add(this.labelControl7);
             this.groupControl5.Controls.Add(this.labelControl8);
             this.groupControl5.Controls.Add(this.TxtUrunId);
-            this.groupControl5.Controls.Add(this.BtnTemizle);
-            this.groupControl5.Controls.Add(this.BtnGuncelle);
             this.groupControl5.Controls.Add(this.labelControl11);
-            this.groupControl5.Controls.Add(this.BtnSil);
             this.groupControl5.Controls.Add(this.BtnKaydet);
             this.groupControl5.Controls.Add(this.labelControl6);
             this.groupControl5.Location = new System.Drawing.Point(8, 18);
@@ -339,31 +336,6 @@
             this.TxtUrunId.Size = new System.Drawing.Size(161, 24);
             this.TxtUrunId.TabIndex = 29;
             // 
-            // BtnTemizle
-            // 
-            this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnTemizle.Appearance.Options.UseFont = true;
-            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
-            this.BtnTemizle.Location = new System.Drawing.Point(103, 305);
-            this.BtnTemizle.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnTemizle.Name = "BtnTemizle";
-            this.BtnTemizle.Size = new System.Drawing.Size(161, 32);
-            this.BtnTemizle.TabIndex = 28;
-            this.BtnTemizle.Text = "Temizle";
-            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
-            // 
-            // BtnGuncelle
-            // 
-            this.BtnGuncelle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnGuncelle.Appearance.Options.UseFont = true;
-            this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
-            this.BtnGuncelle.Location = new System.Drawing.Point(103, 270);
-            this.BtnGuncelle.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnGuncelle.Name = "BtnGuncelle";
-            this.BtnGuncelle.Size = new System.Drawing.Size(161, 32);
-            this.BtnGuncelle.TabIndex = 21;
-            this.BtnGuncelle.Text = "Güncelle";
-            // 
             // labelControl11
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -374,18 +346,6 @@
             this.labelControl11.Size = new System.Drawing.Size(36, 18);
             this.labelControl11.TabIndex = 23;
             this.labelControl11.Text = "Fiyat:";
-            // 
-            // BtnSil
-            // 
-            this.BtnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnSil.Appearance.Options.UseFont = true;
-            this.BtnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSil.ImageOptions.Image")));
-            this.BtnSil.Location = new System.Drawing.Point(103, 236);
-            this.BtnSil.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnSil.Name = "BtnSil";
-            this.BtnSil.Size = new System.Drawing.Size(161, 32);
-            this.BtnSil.TabIndex = 20;
-            this.BtnSil.Text = "Sil";
             // 
             // BtnKaydet
             // 
@@ -471,7 +431,6 @@
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.groupControl4);
-            this.xtraTabPage1.Controls.Add(this.groupControl3);
             this.xtraTabPage1.Controls.Add(this.groupControl2);
             this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(2);
@@ -481,19 +440,60 @@
             // 
             // groupControl4
             // 
+            this.groupControl4.Controls.Add(this.BtnTemizle);
+            this.groupControl4.Controls.Add(this.BtnGuncelle);
+            this.groupControl4.Controls.Add(this.BtnSil);
             this.groupControl4.Controls.Add(this.TxtAlici);
             this.groupControl4.Controls.Add(this.labelControl14);
             this.groupControl4.Controls.Add(this.TxtTeslimEden);
             this.groupControl4.Controls.Add(this.TxtTeslimAlan);
             this.groupControl4.Controls.Add(this.labelControl5);
             this.groupControl4.Controls.Add(this.labelControl3);
-            this.groupControl4.Location = new System.Drawing.Point(4, 260);
+            this.groupControl4.Location = new System.Drawing.Point(2, 228);
             this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.ShowCaption = false;
-            this.groupControl4.Size = new System.Drawing.Size(288, 147);
+            this.groupControl4.Size = new System.Drawing.Size(288, 235);
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "groupControl4";
+            // 
+            // BtnTemizle
+            // 
+            this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnTemizle.Appearance.Options.UseFont = true;
+            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
+            this.BtnTemizle.Location = new System.Drawing.Point(107, 172);
+            this.BtnTemizle.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnTemizle.Name = "BtnTemizle";
+            this.BtnTemizle.Size = new System.Drawing.Size(163, 32);
+            this.BtnTemizle.TabIndex = 33;
+            this.BtnTemizle.Text = "Temizle";
+            // 
+            // BtnGuncelle
+            // 
+            this.BtnGuncelle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnGuncelle.Appearance.Options.UseFont = true;
+            this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
+            this.BtnGuncelle.Location = new System.Drawing.Point(107, 136);
+            this.BtnGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnGuncelle.Name = "BtnGuncelle";
+            this.BtnGuncelle.Size = new System.Drawing.Size(163, 32);
+            this.BtnGuncelle.TabIndex = 32;
+            this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
+            // 
+            // BtnSil
+            // 
+            this.BtnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnSil.Appearance.Options.UseFont = true;
+            this.BtnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSil.ImageOptions.Image")));
+            this.BtnSil.Location = new System.Drawing.Point(107, 102);
+            this.BtnSil.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSil.Name = "BtnSil";
+            this.BtnSil.Size = new System.Drawing.Size(163, 32);
+            this.BtnSil.TabIndex = 31;
+            this.BtnSil.Text = "Sil";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // TxtAlici
             // 
@@ -556,7 +556,7 @@
             this.groupControl3.Controls.Add(this.labelControl9);
             this.groupControl3.Controls.Add(this.labelControl13);
             this.groupControl3.Controls.Add(this.labelControl12);
-            this.groupControl3.Location = new System.Drawing.Point(-7, 126);
+            this.groupControl3.Location = new System.Drawing.Point(852, 160);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.ShowCaption = false;
@@ -601,6 +601,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 519);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "FrmFaturalar";
             this.Text = "FATURALAR";
@@ -653,10 +654,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.GroupControl groupControl5;
-        private DevExpress.XtraEditors.SimpleButton BtnTemizle;
-        private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.SimpleButton BtnKaydet;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -685,5 +683,8 @@
         private DevExpress.XtraEditors.TextEdit TxtUrunAd;
         private DevExpress.XtraEditors.TextEdit TxtMiktar;
         private DevExpress.XtraEditors.TextEdit TxtFiyat;
+        private DevExpress.XtraEditors.SimpleButton BtnTemizle;
+        private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
+        private DevExpress.XtraEditors.SimpleButton BtnSil;
     }
 }

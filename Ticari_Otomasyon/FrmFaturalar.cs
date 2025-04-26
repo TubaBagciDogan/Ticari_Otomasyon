@@ -59,8 +59,30 @@ namespace Ticari_Otomasyon
                 komut.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 MessageBox.Show("Fatura Bilgisi Sisteme Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                listele();
+                listele();  
             }
+
+            if (TxtFaturaId.Text!="")
+            {
+                double miktar, tutar, fiyat;
+                fiyat=Convert.ToDouble(TxtFiyat.Text);
+                miktar=Convert.ToDouble(TxtMiktar.Text);
+                tutar = miktar * fiyat;
+                TxtTutar.Text=tutar.ToString();
+
+                SqlCommand komut2 = new SqlCommand("insert into TBL_FATURADETAY (URUNAD,MIKTAR,FIYAT,TUTAR,FATURAID) VALUES (@P1,@P2,@P3,@P4,@P5)",bgl.baglanti());
+                komut2.Parameters.AddWithValue("@P1", TxtUrunAd.Text);
+                komut2.Parameters.AddWithValue("@P2", TxtMiktar.Text);
+                komut2.Parameters.AddWithValue("@P3", TxtFiyat.Text);
+                komut2.Parameters.AddWithValue("@P4", TxtTutar.Text);
+                komut2.Parameters.AddWithValue("@P5", TxtFaturaId.Text);
+                komut2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+                MessageBox.Show("Faturaya Ait Ürün Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listele();
+
+            }
+          
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -84,6 +106,34 @@ namespace Ticari_Otomasyon
         private void BtnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
+        }
+
+        private void BtnSil_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Delete from TBL_FATURABILGI where FATURABILGIID=@p1",bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", TxtId.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Fatura Silindi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            listele();
+        }
+
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("update TBL_FATURABILGI set SERI=@P1,SIRANO=@P2,TARIH=@P3,SAAT=@P4,VERGIDAIRE=@P5,ALICI=@P6,TESLIMEDEN=@P7,TESLIMALAN=@P8 WHERE FATURABILGIID=@P9",bgl.baglanti());
+            komut.Parameters.AddWithValue("@P1", TxtSeri.Text);
+            komut.Parameters.AddWithValue("@P2", TxtSiraNo.Text);
+            komut.Parameters.AddWithValue("@P3", MskTarih.Text);
+            komut.Parameters.AddWithValue("@P4", MskSaat.Text);
+            komut.Parameters.AddWithValue("@P5", TxtVergiDairesi.Text);
+            komut.Parameters.AddWithValue("@P6", TxtAlici.Text);
+            komut.Parameters.AddWithValue("@P7", TxtTeslimEden.Text);
+            komut.Parameters.AddWithValue("@P8", TxtTeslimAlan.Text);
+            komut.Parameters.AddWithValue("@P9", TxtId.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Fatura Bilgisi Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            listele();
         }
     }
 }
