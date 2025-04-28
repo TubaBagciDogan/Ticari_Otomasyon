@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFaturalar));
-            this.MskTarih = new System.Windows.Forms.MaskedTextBox();
             this.TxtTeslimEden = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.TxtSiraNo = new DevExpress.XtraEditors.TextEdit();
@@ -53,8 +52,6 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -71,6 +68,9 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.TxtVergiDairesi = new DevExpress.XtraEditors.TextEdit();
             this.MskSaat = new System.Windows.Forms.MaskedTextBox();
+            this.MskTarih = new System.Windows.Forms.MaskedTextBox();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTeslimEden.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -100,16 +100,6 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtVergiDairesi.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MskTarih
-            // 
-            this.MskTarih.Location = new System.Drawing.Point(107, 13);
-            this.MskTarih.Margin = new System.Windows.Forms.Padding(2);
-            this.MskTarih.Mask = "00/00/0000";
-            this.MskTarih.Name = "MskTarih";
-            this.MskTarih.Size = new System.Drawing.Size(162, 21);
-            this.MskTarih.TabIndex = 27;
-            this.MskTarih.ValidatingType = typeof(System.DateTime);
             // 
             // TxtTeslimEden
             // 
@@ -224,11 +214,11 @@
             this.groupControl5.Controls.Add(this.labelControl11);
             this.groupControl5.Controls.Add(this.BtnKaydet);
             this.groupControl5.Controls.Add(this.labelControl6);
-            this.groupControl5.Location = new System.Drawing.Point(8, 18);
+            this.groupControl5.Location = new System.Drawing.Point(4, 11);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.ShowCaption = false;
-            this.groupControl5.Size = new System.Drawing.Size(279, 386);
+            this.groupControl5.Size = new System.Drawing.Size(279, 227);
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "groupControl5";
             // 
@@ -352,7 +342,7 @@
             this.BtnKaydet.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnKaydet.Appearance.Options.UseFont = true;
             this.BtnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnKaydet.ImageOptions.Image")));
-            this.BtnKaydet.Location = new System.Drawing.Point(103, 200);
+            this.BtnKaydet.Location = new System.Drawing.Point(103, 175);
             this.BtnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.BtnKaydet.Name = "BtnKaydet";
             this.BtnKaydet.Size = new System.Drawing.Size(161, 32);
@@ -371,28 +361,6 @@
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Ürün Ad:";
             // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(21, 74);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(70, 17);
-            this.labelControl9.TabIndex = 26;
-            this.labelControl9.Text = "Vergi Daire:";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(59, 44);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(32, 17);
-            this.labelControl13.TabIndex = 15;
-            this.labelControl13.Text = "Saat:";
-            // 
             // gridView1
             // 
             this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -403,6 +371,7 @@
             this.gridView1.OptionsEditForm.PopupEditFormWidth = 600;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // gridControl1
             // 
@@ -430,6 +399,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.groupControl3);
             this.xtraTabPage1.Controls.Add(this.groupControl4);
             this.xtraTabPage1.Controls.Add(this.groupControl2);
             this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
@@ -556,12 +526,12 @@
             this.groupControl3.Controls.Add(this.labelControl9);
             this.groupControl3.Controls.Add(this.labelControl13);
             this.groupControl3.Controls.Add(this.labelControl12);
-            this.groupControl3.Location = new System.Drawing.Point(852, 160);
+            this.groupControl3.Location = new System.Drawing.Point(2, 115);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.ShowCaption = false;
-            this.groupControl3.Size = new System.Drawing.Size(288, 109);
-            this.groupControl3.TabIndex = 1;
+            this.groupControl3.Size = new System.Drawing.Size(279, 109);
+            this.groupControl3.TabIndex = 4;
             this.groupControl3.Text = "groupControl3";
             // 
             // TxtVergiDairesi
@@ -584,6 +554,38 @@
             this.MskSaat.TabIndex = 28;
             this.MskSaat.ValidatingType = typeof(System.DateTime);
             // 
+            // MskTarih
+            // 
+            this.MskTarih.Location = new System.Drawing.Point(107, 13);
+            this.MskTarih.Margin = new System.Windows.Forms.Padding(2);
+            this.MskTarih.Mask = "00/00/0000";
+            this.MskTarih.Name = "MskTarih";
+            this.MskTarih.Size = new System.Drawing.Size(162, 21);
+            this.MskTarih.TabIndex = 27;
+            this.MskTarih.ValidatingType = typeof(System.DateTime);
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(21, 74);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(70, 17);
+            this.labelControl9.TabIndex = 26;
+            this.labelControl9.Text = "Vergi Daire:";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Location = new System.Drawing.Point(59, 44);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(32, 17);
+            this.labelControl13.TabIndex = 15;
+            this.labelControl13.Text = "Saat:";
+            // 
             // labelControl12
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -601,7 +603,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 519);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "FrmFaturalar";
             this.Text = "FATURALAR";
@@ -642,8 +643,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MaskedTextBox MskTarih;
         private DevExpress.XtraEditors.TextEdit TxtTeslimEden;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.TextEdit TxtSiraNo;
@@ -659,8 +658,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
@@ -669,11 +666,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.TextEdit TxtTeslimAlan;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit TxtVergiDairesi;
-        private System.Windows.Forms.MaskedTextBox MskSaat;
         private DevExpress.XtraEditors.TextEdit TxtAlici;
         private DevExpress.XtraEditors.TextEdit TxtUrunId;
         private DevExpress.XtraEditors.LabelControl labelControl15;
@@ -686,5 +679,12 @@
         private DevExpress.XtraEditors.SimpleButton BtnTemizle;
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private DevExpress.XtraEditors.SimpleButton BtnSil;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.TextEdit TxtVergiDairesi;
+        private System.Windows.Forms.MaskedTextBox MskSaat;
+        private System.Windows.Forms.MaskedTextBox MskTarih;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
     }
 }

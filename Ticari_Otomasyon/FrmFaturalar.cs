@@ -135,5 +135,18 @@ namespace Ticari_Otomasyon
             MessageBox.Show("Fatura Bilgisi Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             listele();
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmFaturaUrunDetay fr= new FrmFaturaUrunDetay();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+
+            if(dr != null)
+            {
+                fr.id = dr["FATURABILGIID"].ToString();
+
+            }
+            fr.Show();
+        }
     }
 }
