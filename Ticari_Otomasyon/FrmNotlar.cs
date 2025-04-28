@@ -103,5 +103,16 @@ namespace Ticari_Otomasyon
             listele();
             MessageBox.Show("Not Bilgisi Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmNotDetay fr = new FrmNotDetay();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if(dr!=null)
+            {
+                fr.metin = dr["DETAY"].ToString();
+            }
+            fr.Show();
+        }
     }
 }

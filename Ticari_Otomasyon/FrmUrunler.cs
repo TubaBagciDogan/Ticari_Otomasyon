@@ -26,10 +26,23 @@ namespace Ticari_Otomasyon
             da.Fill(dt);
             gridControl1.DataSource = dt;
         }
-
+        void temizle()
+        {
+            TxtAd.Text = "";
+            TxtAlis.Text = "";
+            TxtId.Text = "";
+            TxtMarka.Text = "";
+            TxtModel.Text = "";
+            TxtSatis.Text = "";
+            MskYil.Text = "";
+            NudAdet.Value = 0;
+            RchDetay.Text = "";
+        }
         private void FrmUrunler_Load(object sender, EventArgs e)
         {
             listele();
+
+            temizle();
         }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
@@ -91,6 +104,12 @@ namespace Ticari_Otomasyon
             bgl.baglanti().Close();
             MessageBox.Show("Ürün Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             listele();
+        }
+
+        private void BtnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
+
         }
     }
 }
