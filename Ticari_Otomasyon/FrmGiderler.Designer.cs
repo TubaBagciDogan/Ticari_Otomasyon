@@ -98,6 +98,7 @@
             // 
             this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnTemizle.Appearance.Options.UseFont = true;
+            this.BtnTemizle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
             this.BtnTemizle.Location = new System.Drawing.Point(102, 482);
             this.BtnTemizle.Margin = new System.Windows.Forms.Padding(2);
@@ -120,7 +121,7 @@
             "2024",
             "2025"});
             this.CmbYil.Size = new System.Drawing.Size(161, 24);
-            this.CmbYil.TabIndex = 27;
+            this.CmbYil.TabIndex = 2;
             // 
             // CmbAy
             // 
@@ -145,7 +146,7 @@
             "Kasım",
             "Aralık"});
             this.CmbAy.Size = new System.Drawing.Size(161, 24);
-            this.CmbAy.TabIndex = 26;
+            this.CmbAy.TabIndex = 1;
             // 
             // labelControl11
             // 
@@ -214,7 +215,7 @@
             this.RchNotlar.Margin = new System.Windows.Forms.Padding(2);
             this.RchNotlar.Name = "RchNotlar";
             this.RchNotlar.Size = new System.Drawing.Size(165, 91);
-            this.RchNotlar.TabIndex = 18;
+            this.RchNotlar.TabIndex = 9;
             this.RchNotlar.Text = "";
             // 
             // labelControl9
@@ -236,7 +237,7 @@
             this.TxtElektrik.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtElektrik.Properties.Appearance.Options.UseFont = true;
             this.TxtElektrik.Size = new System.Drawing.Size(161, 24);
-            this.TxtElektrik.TabIndex = 16;
+            this.TxtElektrik.TabIndex = 3;
             // 
             // labelControl8
             // 
@@ -279,7 +280,7 @@
             this.TxtSu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtSu.Properties.Appearance.Options.UseFont = true;
             this.TxtSu.Size = new System.Drawing.Size(161, 24);
-            this.TxtSu.TabIndex = 8;
+            this.TxtSu.TabIndex = 4;
             // 
             // labelControl4
             // 
@@ -300,7 +301,7 @@
             this.TxtEkstra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtEkstra.Properties.Appearance.Options.UseFont = true;
             this.TxtEkstra.Size = new System.Drawing.Size(161, 24);
-            this.TxtEkstra.TabIndex = 6;
+            this.TxtEkstra.TabIndex = 8;
             // 
             // labelControl3
             // 
@@ -321,7 +322,7 @@
             this.TxtMaaslar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtMaaslar.Properties.Appearance.Options.UseFont = true;
             this.TxtMaaslar.Size = new System.Drawing.Size(161, 24);
-            this.TxtMaaslar.TabIndex = 4;
+            this.TxtMaaslar.TabIndex = 7;
             // 
             // labelControl2
             // 
@@ -342,7 +343,7 @@
             this.TxtId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtId.Properties.Appearance.Options.UseFont = true;
             this.TxtId.Size = new System.Drawing.Size(161, 24);
-            this.TxtId.TabIndex = 1;
+            this.TxtId.TabIndex = 100;
             // 
             // labelControl1
             // 
@@ -395,7 +396,7 @@
             this.TxtDogalgaz.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtDogalgaz.Properties.Appearance.Options.UseFont = true;
             this.TxtDogalgaz.Size = new System.Drawing.Size(161, 24);
-            this.TxtDogalgaz.TabIndex = 30;
+            this.TxtDogalgaz.TabIndex = 5;
             // 
             // Txtinternet
             // 
@@ -405,12 +406,14 @@
             this.Txtinternet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Txtinternet.Properties.Appearance.Options.UseFont = true;
             this.Txtinternet.Size = new System.Drawing.Size(161, 24);
-            this.Txtinternet.TabIndex = 29;
+            this.Txtinternet.TabIndex = 6;
             // 
             // FrmGiderler
             // 
+            this.AcceptButton = this.BtnKaydet;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnTemizle;
             this.ClientSize = new System.Drawing.Size(1036, 531);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);

@@ -20,7 +20,7 @@ namespace Ticari_Otomasyon
         void giderlistesi()
         {
             DataTable dt= new DataTable();
-            SqlDataAdapter da= new SqlDataAdapter("Select * from TBL_GIDERLER ", bgl.baglanti());
+            SqlDataAdapter da= new SqlDataAdapter("Select * from TBL_GIDERLER Order By ID Asc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
         }
@@ -59,7 +59,7 @@ namespace Ticari_Otomasyon
             bgl.baglanti().Close();
             MessageBox.Show("Gider Tabloya Eklendi","Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
             giderlistesi();
-            temizle();
+          
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

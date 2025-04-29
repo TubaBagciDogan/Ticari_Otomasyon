@@ -53,13 +53,13 @@
             this.TxtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.TxtYetkili = new System.Windows.Forms.MaskedTextBox();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.TxtHesapNo = new System.Windows.Forms.MaskedTextBox();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cmbilce.Properties)).BeginInit();
@@ -106,7 +106,7 @@
             this.Cmbilce.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Cmbilce.Size = new System.Drawing.Size(161, 24);
-            this.Cmbilce.TabIndex = 27;
+            this.Cmbilce.TabIndex = 4;
             // 
             // Cmbil
             // 
@@ -118,7 +118,7 @@
             this.Cmbil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Cmbil.Size = new System.Drawing.Size(161, 24);
-            this.Cmbil.TabIndex = 26;
+            this.Cmbil.TabIndex = 3;
             this.Cmbil.SelectedIndexChanged += new System.EventHandler(this.Cmbil_SelectedIndexChanged);
             // 
             // MskTarih
@@ -128,7 +128,7 @@
             this.MskTarih.Mask = "00/00/0000";
             this.MskTarih.Name = "MskTarih";
             this.MskTarih.Size = new System.Drawing.Size(161, 21);
-            this.MskTarih.TabIndex = 25;
+            this.MskTarih.TabIndex = 10;
             this.MskTarih.ValidatingType = typeof(System.DateTime);
             // 
             // MskTelefon
@@ -138,7 +138,7 @@
             this.MskTelefon.Mask = "(999) 000-0000";
             this.MskTelefon.Name = "MskTelefon";
             this.MskTelefon.Size = new System.Drawing.Size(162, 21);
-            this.MskTelefon.TabIndex = 24;
+            this.MskTelefon.TabIndex = 9;
             // 
             // labelControl10
             // 
@@ -242,7 +242,7 @@
             this.TxtSube.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtSube.Properties.Appearance.Options.UseFont = true;
             this.TxtSube.Size = new System.Drawing.Size(161, 24);
-            this.TxtSube.TabIndex = 8;
+            this.TxtSube.TabIndex = 5;
             // 
             // labelControl4
             // 
@@ -263,7 +263,7 @@
             this.TxtHesapTuru.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtHesapTuru.Properties.Appearance.Options.UseFont = true;
             this.TxtHesapTuru.Size = new System.Drawing.Size(161, 24);
-            this.TxtHesapTuru.TabIndex = 6;
+            this.TxtHesapTuru.TabIndex = 11;
             // 
             // labelControl3
             // 
@@ -284,7 +284,7 @@
             this.TxtBankaAd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtBankaAd.Properties.Appearance.Options.UseFont = true;
             this.TxtBankaAd.Size = new System.Drawing.Size(161, 24);
-            this.TxtBankaAd.TabIndex = 4;
+            this.TxtBankaAd.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -303,7 +303,7 @@
             this.TxtIban.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIban.Name = "TxtIban";
             this.TxtIban.Size = new System.Drawing.Size(161, 21);
-            this.TxtIban.TabIndex = 2;
+            this.TxtIban.TabIndex = 6;
             // 
             // TxtId
             // 
@@ -313,7 +313,7 @@
             this.TxtId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtId.Properties.Appearance.Options.UseFont = true;
             this.TxtId.Size = new System.Drawing.Size(161, 24);
-            this.TxtId.TabIndex = 1;
+            this.TxtId.TabIndex = 100;
             // 
             // labelControl1
             // 
@@ -362,6 +362,18 @@
             this.groupControl1.Size = new System.Drawing.Size(328, 515);
             this.groupControl1.TabIndex = 5;
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(100, 331);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.NullText = "Bir Firma seçin";
+            this.lookUpEdit1.Size = new System.Drawing.Size(160, 24);
+            this.lookUpEdit1.TabIndex = 12;
+            // 
             // BtnTemizle
             // 
             this.BtnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -403,7 +415,7 @@
             this.TxtYetkili.Margin = new System.Windows.Forms.Padding(2);
             this.TxtYetkili.Name = "TxtYetkili";
             this.TxtYetkili.Size = new System.Drawing.Size(161, 21);
-            this.TxtYetkili.TabIndex = 30;
+            this.TxtYetkili.TabIndex = 8;
             // 
             // labelControl12
             // 
@@ -422,22 +434,11 @@
             this.TxtHesapNo.Margin = new System.Windows.Forms.Padding(2);
             this.TxtHesapNo.Name = "TxtHesapNo";
             this.TxtHesapNo.Size = new System.Drawing.Size(161, 21);
-            this.TxtHesapNo.TabIndex = 28;
-            // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(100, 331);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Properties.NullText = "Bir Firma seçin";
-            this.lookUpEdit1.Size = new System.Drawing.Size(160, 24);
-            this.lookUpEdit1.TabIndex = 35;
+            this.TxtHesapNo.TabIndex = 7;
             // 
             // FrmBankalar
             // 
+            this.AcceptButton = this.BtnKaydet;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 519);

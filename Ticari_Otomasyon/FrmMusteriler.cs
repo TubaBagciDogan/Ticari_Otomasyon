@@ -35,19 +35,35 @@ namespace Ticari_Otomasyon
             }
             bgl.baglanti().Close();
         }
-            private void FrmMusteriler_Load(object sender, EventArgs e)
-            {
-                listele();
-                sehirlistesi();
+        void temizle()
+        {
+            TxtAd.Text = "";
+            TxtId.Text = "";
+            TxtMail.Text = "";
+            TxtSoyad.Text = "";
+            TxtVergi.Text = "";
+            MskTC.Text = "";
+            MskTelefon1.Text = "";
+            MskTelefon2.Text = "";
+            Cmbil.Text = "";
+            Cmbilce.Text = "";
+            RchAdres.Text = "";
 
-            }
+        }
+        private void FrmMusteriler_Load(object sender, EventArgs e)
+        {
+            listele();
+            sehirlistesi();
+            temizle();
+
+        }
 
         private void Cmbil_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cmbilce.Properties.Items.Clear();
             SqlCommand komut = new SqlCommand("Select ilce from TBL_ILCELER where sehir=@p1", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", Cmbil.SelectedIndex + 1);
-            SqlDataReader dr= komut.ExecuteReader();
+            SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
                 Cmbilce.Properties.Items.Add(dr[0]);
@@ -70,8 +86,9 @@ namespace Ticari_Otomasyon
             komut.Parameters.AddWithValue("@p10", TxtVergi.Text);
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
-            MessageBox.Show("Müşteri Sisteme Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information );
+            MessageBox.Show("Müşteri Sisteme Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             listele();
+            temizle();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -104,7 +121,7 @@ namespace Ticari_Otomasyon
                 komut.ExecuteNonQuery();
                 MessageBox.Show("Müşteri Silindi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            
+
             bgl.baglanti().Close();
             listele();
 
@@ -130,5 +147,5 @@ namespace Ticari_Otomasyon
             listele();
         }
     }
-    }
+}
 
