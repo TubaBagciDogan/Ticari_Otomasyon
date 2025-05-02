@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmin));
             this.label1 = new System.Windows.Forms.Label();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.TxtKullaniciAd = new DevExpress.XtraEditors.TextEdit();
+            this.TxtSifre = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnGirisYap = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtKullaniciAd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSifre.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,24 +50,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kullanıcı Adı:";
             // 
-            // textEdit1
+            // TxtKullaniciAd
             // 
-            this.textEdit1.Location = new System.Drawing.Point(101, 12);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(100, 24);
-            this.textEdit1.TabIndex = 1;
+            this.TxtKullaniciAd.Location = new System.Drawing.Point(101, 12);
+            this.TxtKullaniciAd.Name = "TxtKullaniciAd";
+            this.TxtKullaniciAd.Properties.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtKullaniciAd.Properties.Appearance.Options.UseFont = true;
+            this.TxtKullaniciAd.Size = new System.Drawing.Size(100, 24);
+            this.TxtKullaniciAd.TabIndex = 1;
             // 
-            // textEdit2
+            // TxtSifre
             // 
-            this.textEdit2.Location = new System.Drawing.Point(101, 51);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.UseSystemPasswordChar = true;
-            this.textEdit2.Size = new System.Drawing.Size(100, 24);
-            this.textEdit2.TabIndex = 3;
+            this.TxtSifre.Location = new System.Drawing.Point(101, 51);
+            this.TxtSifre.Name = "TxtSifre";
+            this.TxtSifre.Properties.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtSifre.Properties.Appearance.Options.UseFont = true;
+            this.TxtSifre.Properties.UseSystemPasswordChar = true;
+            this.TxtSifre.Size = new System.Drawing.Size(100, 24);
+            this.TxtSifre.TabIndex = 3;
             // 
             // label2
             // 
@@ -80,15 +80,19 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Şifre:";
             // 
-            // button1
+            // BtnGirisYap
             // 
-            this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(101, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Giriş Yap";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnGirisYap.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BtnGirisYap.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnGirisYap.Location = new System.Drawing.Point(101, 90);
+            this.BtnGirisYap.Name = "BtnGirisYap";
+            this.BtnGirisYap.Size = new System.Drawing.Size(100, 26);
+            this.BtnGirisYap.TabIndex = 4;
+            this.BtnGirisYap.Text = "Giriş Yap";
+            this.BtnGirisYap.UseVisualStyleBackColor = false;
+            this.BtnGirisYap.Click += new System.EventHandler(this.BtnGirisYap_Click);
+            this.BtnGirisYap.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.BtnGirisYap.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // label3
             // 
@@ -109,17 +113,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(777, 383);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.BtnGirisYap);
+            this.Controls.Add(this.TxtSifre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.TxtKullaniciAd);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtKullaniciAd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSifre.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,10 +132,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit TxtKullaniciAd;
+        private DevExpress.XtraEditors.TextEdit TxtSifre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnGirisYap;
         private System.Windows.Forms.Label label3;
     }
 }
