@@ -16,5 +16,11 @@ namespace Ticari_Otomasyon
         {
             InitializeComponent();
         }
+
+        private void FrmRaporlar_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
