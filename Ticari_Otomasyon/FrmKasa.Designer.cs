@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKasa));
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.XYDiagram xyDiagram7 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.XYDiagram xyDiagram8 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.LblSehirSayisi2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.LblSehirSayisi = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
@@ -71,8 +74,10 @@
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.LblSehirSayisi2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl11 = new DevExpress.XtraEditors.GroupControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -100,13 +105,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
+            this.groupControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
+            this.groupControl11.SuspendLayout();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -166,6 +175,26 @@
             this.groupControl6.Size = new System.Drawing.Size(306, 39);
             this.groupControl6.TabIndex = 7;
             this.groupControl6.Text = "Kasa";
+            // 
+            // LblSehirSayisi2
+            // 
+            this.LblSehirSayisi2.AutoSize = true;
+            this.LblSehirSayisi2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblSehirSayisi2.Location = new System.Drawing.Point(274, 16);
+            this.LblSehirSayisi2.Name = "LblSehirSayisi2";
+            this.LblSehirSayisi2.Size = new System.Drawing.Size(14, 14);
+            this.LblSehirSayisi2.TabIndex = 3;
+            this.LblSehirSayisi2.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(160, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 14);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Müşteri Şehir Sayısı:";
             // 
             // LblSehirSayisi
             // 
@@ -453,8 +482,8 @@
             // 
             // xtraTabPage2
             // 
-            this.xtraTabPage2.Controls.Add(this.chartControl2);
-            this.xtraTabPage2.Controls.Add(this.chartControl1);
+            this.xtraTabPage2.Controls.Add(this.groupControl11);
+            this.xtraTabPage2.Controls.Add(this.groupControl10);
             this.xtraTabPage2.Controls.Add(this.gridControl1);
             this.xtraTabPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.ImageOptions.Image")));
             this.xtraTabPage2.Name = "xtraTabPage2";
@@ -464,32 +493,32 @@
             // chartControl2
             // 
             this.chartControl2.AppearanceNameSerializable = "Light";
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl2.Diagram = xyDiagram1;
-            this.chartControl2.Location = new System.Drawing.Point(3, 209);
+            xyDiagram7.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram7.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl2.Diagram = xyDiagram7;
+            this.chartControl2.Location = new System.Drawing.Point(5, 26);
             this.chartControl2.Name = "chartControl2";
             this.chartControl2.PaletteBaseColorNumber = 5;
             this.chartControl2.PaletteName = "Apex";
-            series1.Name = "AYLAR";
-            series1.SeriesID = 6;
+            series7.Name = "AYLAR";
+            series7.SeriesID = 6;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl2.Size = new System.Drawing.Size(305, 214);
+        series7};
+            this.chartControl2.Size = new System.Drawing.Size(295, 176);
             this.chartControl2.TabIndex = 2;
             // 
             // chartControl1
             // 
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram2;
-            this.chartControl1.Location = new System.Drawing.Point(3, 3);
+            xyDiagram8.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram8.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram8;
+            this.chartControl1.Location = new System.Drawing.Point(5, 26);
             this.chartControl1.Name = "chartControl1";
-            series2.Name = "AYLAR";
-            series2.SeriesID = 1;
+            series8.Name = "AYLAR";
+            series8.SeriesID = 1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl1.Size = new System.Drawing.Size(305, 200);
+        series8};
+            this.chartControl1.Size = new System.Drawing.Size(295, 175);
             this.chartControl1.TabIndex = 1;
             // 
             // gridControl1
@@ -508,25 +537,35 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // LblSehirSayisi2
+            // groupControl10
             // 
-            this.LblSehirSayisi2.AutoSize = true;
-            this.LblSehirSayisi2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblSehirSayisi2.Location = new System.Drawing.Point(274, 16);
-            this.LblSehirSayisi2.Name = "LblSehirSayisi2";
-            this.LblSehirSayisi2.Size = new System.Drawing.Size(14, 14);
-            this.LblSehirSayisi2.TabIndex = 3;
-            this.LblSehirSayisi2.Text = "0";
+            this.groupControl10.Controls.Add(this.chartControl1);
+            this.groupControl10.Location = new System.Drawing.Point(3, 3);
+            this.groupControl10.Name = "groupControl10";
+            this.groupControl10.Size = new System.Drawing.Size(305, 207);
+            this.groupControl10.TabIndex = 3;
+            this.groupControl10.Text = "groupControl10";
             // 
-            // label4
+            // groupControl11
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(160, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 14);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Müşteri Şehir Sayısı:";
+            this.groupControl11.Controls.Add(this.chartControl2);
+            this.groupControl11.Location = new System.Drawing.Point(3, 216);
+            this.groupControl11.Name = "groupControl11";
+            this.groupControl11.Size = new System.Drawing.Size(305, 207);
+            this.groupControl11.TabIndex = 4;
+            this.groupControl11.Text = "groupControl11";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 400;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 300;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // FrmKasa
             // 
@@ -572,14 +611,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
+            this.groupControl10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
+            this.groupControl11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -626,5 +669,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private System.Windows.Forms.Label LblSehirSayisi2;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.GroupControl groupControl10;
+        private DevExpress.XtraEditors.GroupControl groupControl11;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
