@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid;
+using System.Xml;
 namespace Ticari_Otomasyon
 {
     public partial class FrmAnaSayfa : Form
@@ -43,13 +44,37 @@ namespace Ticari_Otomasyon
             da.Fill(dt);
             gridControlFirmaHareket.DataSource = dt;
         }
+
+        void fihrist()
+        {
+            DataTable dt=new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select Ad,Telefon1 From TBL_FIRMALAR",bgl.baglanti());
+            da.Fill(dt);
+            gridControlfihrist.DataSource = dt;
+        }
+
+        void haberler()
+        {
+            XmlTextReader xmloku = new XmlTextReader("https://www.hurriyet.com.tr/rss/anasayfa");
+            while(xmloku.Read())
+            {
+                if(xmloku.Name=="title")
+                {
+                    listBox1.Items.Add(xmloku.ReadString());
+                }
+            }
+        }
         private void FrmAnaSayfa_Load(object sender, EventArgs e)
         {
             stoklar();
             ajanda();
 
             FirmaHareketleri();
+            fihrist();
 
+            webBrowser1.Navigate("https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb+tr/main+page+site+area/bugun");
+
+            haberler();
         }
     }
 }
