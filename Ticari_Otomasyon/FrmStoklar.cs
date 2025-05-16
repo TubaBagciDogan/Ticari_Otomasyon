@@ -53,6 +53,17 @@ namespace Ticari_Otomasyon
 
         }
 
-      
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmStokDetay fr= new FrmStokDetay();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+
+            if(dr != null )
+            {
+                fr.ad = dr["URUNAD"].ToString();
+
+            }
+            fr.Show();
+        }
     }
 }
