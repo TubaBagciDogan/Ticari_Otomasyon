@@ -39,8 +39,13 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.TxtTutar = new DevExpress.XtraEditors.TextEdit();
+            this.TxtFirma = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.TxtFaturaId = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.BtnBul = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtTutar = new DevExpress.XtraEditors.TextEdit();
+            this.TxtPersonel = new DevExpress.XtraEditors.TextEdit();
             this.TxtUrunAd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -81,8 +86,10 @@
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtTutar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFirma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFaturaId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTutar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPersonel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtUrunAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMiktar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFiyat.Properties)).BeginInit();
@@ -201,8 +208,13 @@
             // 
             // groupControl5
             // 
-            this.groupControl5.Controls.Add(this.TxtTutar);
+            this.groupControl5.Controls.Add(this.TxtFirma);
+            this.groupControl5.Controls.Add(this.labelControl17);
             this.groupControl5.Controls.Add(this.TxtFaturaId);
+            this.groupControl5.Controls.Add(this.labelControl16);
+            this.groupControl5.Controls.Add(this.BtnBul);
+            this.groupControl5.Controls.Add(this.TxtTutar);
+            this.groupControl5.Controls.Add(this.TxtPersonel);
             this.groupControl5.Controls.Add(this.TxtUrunAd);
             this.groupControl5.Controls.Add(this.labelControl15);
             this.groupControl5.Controls.Add(this.labelControl10);
@@ -218,9 +230,64 @@
             this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.ShowCaption = false;
-            this.groupControl5.Size = new System.Drawing.Size(279, 227);
+            this.groupControl5.Size = new System.Drawing.Size(279, 441);
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "groupControl5";
+            // 
+            // TxtFirma
+            // 
+            this.TxtFirma.Location = new System.Drawing.Point(103, 175);
+            this.TxtFirma.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtFirma.Name = "TxtFirma";
+            this.TxtFirma.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtFirma.Properties.Appearance.Options.UseFont = true;
+            this.TxtFirma.Size = new System.Drawing.Size(161, 24);
+            this.TxtFirma.TabIndex = 35;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(52, 181);
+            this.labelControl17.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(41, 18);
+            this.labelControl17.TabIndex = 36;
+            this.labelControl17.Text = "Firma:";
+            // 
+            // TxtFaturaId
+            // 
+            this.TxtFaturaId.Location = new System.Drawing.Point(103, 203);
+            this.TxtFaturaId.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtFaturaId.Name = "TxtFaturaId";
+            this.TxtFaturaId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtFaturaId.Properties.Appearance.Options.UseFont = true;
+            this.TxtFaturaId.Size = new System.Drawing.Size(161, 24);
+            this.TxtFaturaId.TabIndex = 33;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Location = new System.Drawing.Point(12, 209);
+            this.labelControl16.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(81, 18);
+            this.labelControl16.TabIndex = 34;
+            this.labelControl16.Text = "FATURA ID:";
+            // 
+            // BtnBul
+            // 
+            this.BtnBul.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnBul.Appearance.Options.UseFont = true;
+            this.BtnBul.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnBul.ImageOptions.Image")));
+            this.BtnBul.Location = new System.Drawing.Point(207, 6);
+            this.BtnBul.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnBul.Name = "BtnBul";
+            this.BtnBul.Size = new System.Drawing.Size(57, 25);
+            this.BtnBul.TabIndex = 32;
+            this.BtnBul.Text = "Bul";
+            this.BtnBul.Click += new System.EventHandler(this.BtnBul_Click);
             // 
             // TxtTutar
             // 
@@ -232,15 +299,15 @@
             this.TxtTutar.Size = new System.Drawing.Size(161, 24);
             this.TxtTutar.TabIndex = 13;
             // 
-            // TxtFaturaId
+            // TxtPersonel
             // 
-            this.TxtFaturaId.Location = new System.Drawing.Point(103, 147);
-            this.TxtFaturaId.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtFaturaId.Name = "TxtFaturaId";
-            this.TxtFaturaId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtFaturaId.Properties.Appearance.Options.UseFont = true;
-            this.TxtFaturaId.Size = new System.Drawing.Size(161, 24);
-            this.TxtFaturaId.TabIndex = 14;
+            this.TxtPersonel.Location = new System.Drawing.Point(103, 147);
+            this.TxtPersonel.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtPersonel.Name = "TxtPersonel";
+            this.TxtPersonel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonel.Properties.Appearance.Options.UseFont = true;
+            this.TxtPersonel.Size = new System.Drawing.Size(161, 24);
+            this.TxtPersonel.TabIndex = 14;
             // 
             // TxtUrunAd
             // 
@@ -256,12 +323,12 @@
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(12, 153);
+            this.labelControl15.Location = new System.Drawing.Point(34, 153);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(81, 18);
+            this.labelControl15.Size = new System.Drawing.Size(59, 18);
             this.labelControl15.TabIndex = 31;
-            this.labelControl15.Text = "FATURA ID:";
+            this.labelControl15.Text = "Personel:";
             // 
             // labelControl10
             // 
@@ -323,7 +390,7 @@
             this.TxtUrunId.Name = "TxtUrunId";
             this.TxtUrunId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TxtUrunId.Properties.Appearance.Options.UseFont = true;
-            this.TxtUrunId.Size = new System.Drawing.Size(161, 24);
+            this.TxtUrunId.Size = new System.Drawing.Size(100, 24);
             this.TxtUrunId.TabIndex = 9;
             // 
             // labelControl11
@@ -342,7 +409,7 @@
             this.BtnKaydet.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnKaydet.Appearance.Options.UseFont = true;
             this.BtnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnKaydet.ImageOptions.Image")));
-            this.BtnKaydet.Location = new System.Drawing.Point(103, 175);
+            this.BtnKaydet.Location = new System.Drawing.Point(103, 231);
             this.BtnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.BtnKaydet.Name = "BtnKaydet";
             this.BtnKaydet.Size = new System.Drawing.Size(161, 32);
@@ -618,8 +685,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             this.groupControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtTutar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtFirma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFaturaId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTutar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPersonel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtUrunAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMiktar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFiyat.Properties)).EndInit();
@@ -672,7 +741,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit TxtTutar;
-        private DevExpress.XtraEditors.TextEdit TxtFaturaId;
+        private DevExpress.XtraEditors.TextEdit TxtPersonel;
         private DevExpress.XtraEditors.TextEdit TxtUrunAd;
         private DevExpress.XtraEditors.TextEdit TxtMiktar;
         private DevExpress.XtraEditors.TextEdit TxtFiyat;
@@ -686,5 +755,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.SimpleButton BtnBul;
+        private DevExpress.XtraEditors.TextEdit TxtFaturaId;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.TextEdit TxtFirma;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
     }
 }

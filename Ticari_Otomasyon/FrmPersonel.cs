@@ -144,5 +144,7 @@ namespace Ticari_Otomasyon
             MessageBox.Show("Personel Bilgileri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             personelliste();
         }
+
+        
     }
 }

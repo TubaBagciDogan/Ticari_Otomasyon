@@ -45,7 +45,7 @@ namespace Ticari_Otomasyon
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            if (TxtFaturaId.Text == "")
+            if (TxtPersonel.Text == "")
             {
                 SqlCommand komut = new SqlCommand("insert into TBL_FATURABILGI (SERI,SIRANO,TARIH,SAAT,VERGIDAIRE,ALICI,TESLIMEDEN,TESLIMALAN) VALUES (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)", bgl.baglanti());
                 komut.Parameters.AddWithValue("@P1", TxtSeri.Text);
@@ -62,7 +62,7 @@ namespace Ticari_Otomasyon
                 listele();  
             }
 
-            if (TxtFaturaId.Text!="")
+            if (TxtPersonel.Text!="")
             {
                 double miktar, tutar, fiyat;
                 fiyat=Convert.ToDouble(TxtFiyat.Text);
@@ -73,14 +73,27 @@ namespace Ticari_Otomasyon
                 SqlCommand komut2 = new SqlCommand("insert into TBL_FATURADETAY (URUNAD,MIKTAR,FIYAT,TUTAR,FATURAID) VALUES (@P1,@P2,@P3,@P4,@P5)",bgl.baglanti());
                 komut2.Parameters.AddWithValue("@P1", TxtUrunAd.Text);
                 komut2.Parameters.AddWithValue("@P2", TxtMiktar.Text);
-                komut2.Parameters.AddWithValue("@P3", TxtFiyat.Text);
-                komut2.Parameters.AddWithValue("@P4", TxtTutar.Text);
-                komut2.Parameters.AddWithValue("@P5", TxtFaturaId.Text);
+                komut2.Parameters.AddWithValue("@P3",decimal.Parse(TxtFiyat.Text));
+                komut2.Parameters.AddWithValue("@P4",decimal.Parse(TxtTutar.Text));
+                komut2.Parameters.AddWithValue("@P5", TxtPersonel.Text);
                 komut2.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                MessageBox.Show("Faturaya Ait Ürün Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                listele();
 
+                // Hareket tablosuna veri girişi
+                SqlCommand komut3 = new SqlCommand("insert into Tbl_FırmaHareketler (Urunıd,adet,personel,fırma,fıyat,toplam,faturaıd,tarıh) values (@h1,@h2,@h3,@h4,@h5,@h6,@h7,@h8)",bgl.baglanti());
+                komut3.Parameters.AddWithValue("@h1",TxtUrunId.Text);
+                komut3.Parameters.AddWithValue("@h2",TxtMiktar.Text);
+                komut3.Parameters.AddWithValue("@h3",TxtPersonel.Text);
+                komut3.Parameters.AddWithValue("@h4",TxtFirma.Text);
+                komut3.Parameters.AddWithValue("@h5",decimal.Parse( TxtFiyat.Text));
+                komut3.Parameters.AddWithValue("@h6",decimal.Parse( TxtTutar.Text));
+                komut3.Parameters.AddWithValue("@h7",TxtFaturaId.Text);
+                komut3.Parameters.AddWithValue("@h8",MskTarih.Text);
+                komut3.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                MessageBox.Show("Faturaya Ait Ürün Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
           
         }
@@ -148,5 +161,20 @@ namespace Ticari_Otomasyon
             }
             fr.Show();
         }
+
+        private void BtnBul_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Select UrunAd,satısFıyat from tbl_urunler where Id=@p1",bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", TxtUrunId.Text);
+            SqlDataReader dr= komut.ExecuteReader();
+            while(dr.Read())
+            {
+                TxtUrunAd.Text = dr[0].ToString();
+                TxtFiyat.Text = dr[1].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
+       
     }
 }
