@@ -83,7 +83,7 @@ namespace Ticari_Otomasyon
         private void BtnBankalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            if (fr7 == null)
+            if (fr7 == null || fr7.IsDisposed)
             {
                 fr7 = new FrmBankalar();
                 fr7.MdiParent = this;

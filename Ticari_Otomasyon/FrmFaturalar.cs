@@ -45,7 +45,8 @@ namespace Ticari_Otomasyon
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            if (TxtPersonel.Text == "")
+            
+            if (TxtFaturaId.Text == "" )
             {
                 SqlCommand komut = new SqlCommand("insert into TBL_FATURABILGI (SERI,SIRANO,TARIH,SAAT,VERGIDAIRE,ALICI,TESLIMEDEN,TESLIMALAN) VALUES (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)", bgl.baglanti());
                 komut.Parameters.AddWithValue("@P1", TxtSeri.Text);
@@ -62,7 +63,9 @@ namespace Ticari_Otomasyon
                 listele();  
             }
 
-            if (TxtPersonel.Text!="")
+
+            //Firma Carisi
+            if (TxtFaturaId.Text!="" && comboBox1.Text == "Firma")
             {
                 double miktar, tutar, fiyat;
                 fiyat=Convert.ToDouble(TxtFiyat.Text);
@@ -75,7 +78,7 @@ namespace Ticari_Otomasyon
                 komut2.Parameters.AddWithValue("@P2", TxtMiktar.Text);
                 komut2.Parameters.AddWithValue("@P3",decimal.Parse(TxtFiyat.Text));
                 komut2.Parameters.AddWithValue("@P4",decimal.Parse(TxtTutar.Text));
-                komut2.Parameters.AddWithValue("@P5", TxtPersonel.Text);
+                komut2.Parameters.AddWithValue("@P5", TxtFaturaId.Text);
                 komut2.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
@@ -92,10 +95,63 @@ namespace Ticari_Otomasyon
                 komut3.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
+                //Stok sayısını azaltma
+                SqlCommand komut4 = new SqlCommand("update Tbl_urunler set adet=adet-@s1 where Id=@s2",bgl.baglanti());
+                komut4.Parameters.AddWithValue("@s1", TxtMiktar.Text);
+                komut4.Parameters.AddWithValue("@s2", TxtUrunId.Text);
+                komut4.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+
                 MessageBox.Show("Faturaya Ait Ürün Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
-          
+
+
+
+            //Müşteri Carisi
+            if (TxtFaturaId.Text != "" && comboBox1.Text == "Müşteri")
+            {
+                double miktar, tutar, fiyat;
+                fiyat = Convert.ToDouble(TxtFiyat.Text);
+                miktar = Convert.ToDouble(TxtMiktar.Text);
+                tutar = miktar * fiyat;
+                TxtTutar.Text = tutar.ToString();
+
+                SqlCommand komut2 = new SqlCommand("insert into TBL_FATURADETAY (URUNAD,MIKTAR,FIYAT,TUTAR,FATURAID) VALUES (@P1,@P2,@P3,@P4,@P5)", bgl.baglanti());
+                komut2.Parameters.AddWithValue("@P1", TxtUrunAd.Text);
+                komut2.Parameters.AddWithValue("@P2", TxtMiktar.Text);
+                komut2.Parameters.AddWithValue("@P3", decimal.Parse(TxtFiyat.Text));
+                komut2.Parameters.AddWithValue("@P4", decimal.Parse(TxtTutar.Text));
+                komut2.Parameters.AddWithValue("@P5", TxtFaturaId.Text);
+                komut2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                // Hareket tablosuna veri girişi
+                SqlCommand komut3 = new SqlCommand("insert into TBL_MUSTERIHAREKETLER (Urunıd,adet,personel,musterı,fıyat,toplam,faturaıd,tarıh) values (@h1,@h2,@h3,@h4,@h5,@h6,@h7,@h8)", bgl.baglanti());
+                komut3.Parameters.AddWithValue("@h1", TxtUrunId.Text);
+                komut3.Parameters.AddWithValue("@h2", TxtMiktar.Text);
+                komut3.Parameters.AddWithValue("@h3", TxtPersonel.Text);
+                komut3.Parameters.AddWithValue("@h4", TxtFirma.Text);
+                komut3.Parameters.AddWithValue("@h5", decimal.Parse(TxtFiyat.Text));
+                komut3.Parameters.AddWithValue("@h6", decimal.Parse(TxtTutar.Text));
+                komut3.Parameters.AddWithValue("@h7", TxtFaturaId.Text);
+                komut3.Parameters.AddWithValue("@h8", MskTarih.Text);
+                komut3.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                //Stok sayısını azaltma
+                SqlCommand komut4 = new SqlCommand("update Tbl_urunler set adet=adet-@s1 where Id=@s2", bgl.baglanti());
+                komut4.Parameters.AddWithValue("@s1", TxtMiktar.Text);
+                komut4.Parameters.AddWithValue("@s2", TxtUrunId.Text);
+                komut4.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+
+                MessageBox.Show("Faturaya Ait Ürün Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
